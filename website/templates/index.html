@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='body.css')}}">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>To Do List</h1>
+
+        <form action="/add" method="post">
+            <div>
+                <label>Todo Task</label>
+                <input type="text" name="task" placeholder="Enter a Task">
+                <button type="submit">Add a Task</button>
+            </div>
+        </form>
+
+        <hr>
+
+{% for todo in todo_list %}
+<div>
+    <!-- </p>
+    {% if todo.complete==False %}
+    <p> Task Incomplete. <a href="/update/{{todo.id}}">Mark As Complete?</a></p>
+    {% else %}
+    <p>Task Complete</p>
+    {% endif %} -->
+
+    <p>{{todo.id}}: {{todo.task}} :
+        {{todo.complete}}</p>
+        <form action="/toggle/{{todo.id}}" method="post">
+            <input type="hidden" name="_method" value="POST">
+            <button type="submit" name="toggle">
+            {% if todo.complete %}
+                Mark as Incomplete
+            {% else %}
+                Mark as Complete
+            {% endif %}
+        </button>
+    <!-- <p> Task Number {{todo.id}}: {{todo.task}} | Task complete?
+    {{todo.complete}}
+    <form action="/toggle/{{todo.id}}" method="post">
+        <input type="hidden" name="_method" value="POST">
+        {% if todo.complete %}
+            <button type="submit">Mark as Incomplete</button>
+        {% else %}
+            <button type="submit">Mark as Complete</button>
+        {% endif %} -->
+    </form>
+
+    <!-- </p>
+    {% if todo.complete==False %}
+    <p> Task Incomplete. <a href="/update/{{todo.id}}">Mark As Complete?</a></p>
+    {% else %}
+    <p>Task Complete</p>
+    {% endif %} -->
+</div>
+<!-- <p><a href= "/delete{{todo.id}}">Delete Task?</a></p> -->
+{% endfor %}
+    </div>
+</body>
+
+</html>
