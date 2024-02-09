@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo App</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='body.css')}}">
-
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/edit.css') }}">
 </head>
 
 <body>
@@ -33,11 +32,12 @@
     <p>Task Complete</p>
     {% endif %} -->
 
-    <p>{{todo.id}}: {{todo.task}} :
-        {{todo.complete}}</p>
+    <p>
+        Task Number {{todo.id}}: {{todo.task}} | Task complete? {{todo.complete}} | Created on: {{todo.date_created.strftime('%d-%m-%Y %H:%M:%S')}} | <a href="{{ url_for('my_view.edit', todo_id=todo.id) }}">Edit Task</a>
+    </p>
         <form action="/toggle/{{todo.id}}" method="post">
             <input type="hidden" name="_method" value="POST">
-            <button type="submit" name="toggle">
+            <button type="submit" name="toggle" style="background-color: azure;">
             {% if todo.complete %}
                 Mark as Incomplete
             {% else %}
@@ -62,7 +62,7 @@
     <p>Task Complete</p>
     {% endif %} -->
 </div>
-<!-- <p><a href= "/delete{{todo.id}}">Delete Task?</a></p> -->
+<p><a href= "/delete{{todo.id}}">Delete Task?</a></p>
 {% endfor %}
     </div>
 </body>

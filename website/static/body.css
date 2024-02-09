@@ -4,8 +4,116 @@ body {
     align-items: flex-start;
     height: 100vh;
     margin: 0;
-}
+    background-color: aquamarine;
+} 
 
 div.container {
     text-align: center;
+} 
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #af9c9c;
+    margin: 0;
+    padding: 0;
 }
+
+h1{
+    text-transform: uppercase;
+    font-family: 'Playpen Sans', cursive;
+    text-align: center;
+    font-size: 70px;
+    background-color: rgb(139, 163, 155);
+    margin-top: 0px;
+    border-bottom: 7px solid rgb(105, 245, 255);
+}
+
+.container {
+    padding: 50px;
+    background-color: #444040;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 80px;
+}
+
+form {
+    margin-bottom: 100px;
+    margin-bottom: 20px;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box
+}
+
+button {
+    background-color: #197e19;
+    color: #080000;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+/* button:hover {
+    background-color: #323f33;
+    border-right: rgb(61, 85, 61);
+} */
+
+a {
+    color: #0dc930;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: dotted;
+} 
+
+
+body.edit-body {
+    align-items: flex-start;
+}
+
+div.edit-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+form.edit-form {
+    max-width: 400px;
+    margin: auto;
+}
+
+label.edit-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input.edit-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+button.edit-button {
+    background-color: #00cc2c;
+    color: #2b2222;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+/* button.edit-button:hover {
+    background-color: #6d7a81;
+    border-right: rgb(30, 43, 44);
+} */

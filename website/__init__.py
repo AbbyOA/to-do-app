@@ -11,10 +11,10 @@ def create_app():
     from .views import my_view
     app.register_blueprint(my_view)
     
-    from .models import Todo
+    # from .models import Todo
     with app.app_context():
         db.create_all()
         
-    app.static_folder = 'static'
+    # app.static_folder = 'static'
         
     return app
